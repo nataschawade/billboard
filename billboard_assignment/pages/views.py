@@ -16,8 +16,7 @@ def HomePageView(request):
 
 def new_post(request):
     user = request.user
-    print('##########')
-    print(user)
+
     date = datetime.datetime.now()
 
     if request.method == 'POST':

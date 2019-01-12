@@ -6,9 +6,7 @@ $(document).ready(function() {
 
 $('#post_button').on('click', function(e) {
     e.preventDefault();
-    console.log("form submitted!");
     addPost();
-
 });
 
 function addPost() {
@@ -24,8 +22,8 @@ function addPost() {
     })
 
     .done(function(data) {
-        $('#post_title').val('');
-        $('#post_description').val('');
+        $('#post_title').val(' ');
+        $('#post_description').val(' ');
         if (data.code == 200) {
             var post = data.post;
         }
@@ -38,9 +36,6 @@ function addPost() {
 
 
 }
-
-
-
 
 $(function() {
     function getCookie(name) {
