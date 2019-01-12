@@ -1,0 +1,49 @@
+.button {
+    border: 1px dashed #00b7ef;
+    padding:10px;
+    margin-right: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    Font-family: Anton;
+    font-size:40px;
+    color:black;
+    text-align: center;
+}
+
+.user {
+    margin-left: 20px
+}
+
+button {
+   text-decoration: none;
+}
+
+.border{
+    border: 3px solid #00b7ef;
+    margin-top: 10px;
+}
+
+.title2 {
+    font-family:anton;
+    font-size:30px;
+    color: #00b7ef
+
+}
+
+.text {
+    font-family: arial;
+    font-size:16px;
+    Color:#c1bfc0;
+}
+
+.gilad {
+    Font-family: Pinyon Script;
+    font-size : 24px;
+    Color : black;
+}

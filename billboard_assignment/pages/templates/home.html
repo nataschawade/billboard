@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>home</title>
+    </head>
+
+    <body>
+      {% if user.is_authenticated %}
+
+        <h1 class="title">BILLBOARD</h1>
+
+
+            {% for post in posts %}
+            <div class="border">
+                <p> {{post.date}}</p>
+                <h2 class="title2"> {{post.title}} </h2>
+                <p class="text">
+                    {{post.text}}
+                </p>
+                    <span class="gilad"> {{post.user.username}}</span>
+            </div>
+            {% endfor %}
+                 <div id="container" style="border: 3px solid #00b7ef; margin-top:10px;">
+
+                 </div>
+
+      <button id="add_post"> <i class="fa fa-plus" id="AddComment" ></i> </button>
+
+    <form enctype="multipart/form-data" method='POST' id="add_post_form" hidden>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" name='new_post' value='Post' id="post_button">
+	</form>
+
+
+
+
+
+
+        <p class="user">{{ user.username }}
+        <p class="button"><a href="{% url 'logout' %}">Log out</a></p>
+        {% else %}
+            <p class="user"> Anonymous User</p>
+           <span class="button"> <a href="{% url 'signup' %}">Register</a> </span>
+            <span class="button"> <a href="{% url 'login' %}">Login </a></span>
+
+        {% endif %}
+    </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</html>

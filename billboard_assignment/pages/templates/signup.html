@@ -1,0 +1,10 @@
+<!-- templates/signup.html -->
+{% load static %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
+<h2>Create an account</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Create an account" class="button">
+</form>
